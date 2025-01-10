@@ -1,20 +1,21 @@
 "use client";
-import { navlinks } from "@/constants/navlinks";
-import { Navlink } from "@/types/navlink";
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter, usePathname } from "next/navigation";
+
 import React, { useState } from "react";
-import { twMerge } from "tailwind-merge";
-import { Heading } from "./Heading";
-import { socials } from "@/constants/socials";
-import { Badge } from "./Badge";
 import { AnimatePresence, motion } from "framer-motion";
+import { twMerge } from "tailwind-merge";
+import { navlinks } from "@/constants/navlinks";
+import { socials } from "@/constants/socials";
+import { Navlink } from "@/types/navlink";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+import Image from "next/image";
 import { IconLayoutSidebarRightCollapse } from "@tabler/icons-react";
 import { isMobile } from "@/lib/utils";
+import { Heading } from "./Heading";
+import { Badge } from "./Badge";
 
 export const Sidebar = () => {
-  const [open, setOpen] = useState(isMobile() ? false : true);
+  const [open, setOpen] = useState(!isMobile());
 
   return (
     <>
@@ -23,9 +24,9 @@ export const Sidebar = () => {
           <motion.div
             initial={{ x: -200 }}
             animate={{ x: 0 }}
-            transition={{ duration: 0.1, ease: "linear" }}
             exit={{ x: -200 }}
-            className="px-6  z-[100] py-10 bg-neutral-100 max-w-[14rem] lg:w-fit  fixed lg:relative  h-screen left-0 flex flex-col justify-between"
+            transition={{ duration: 0.2, ease: "easeInOut" }}
+            className="fixed lg:relative z-[100] left-0 top-0 h-screen bg-neutral-100 px-6 py-10 max-w-[14rem] lg:w-fit flex flex-col justify-between"
           >
             <div className="flex-1 overflow-auto">
               <SidebarHeader />
@@ -37,11 +38,13 @@ export const Sidebar = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
       <button
-        className="fixed lg:hidden bottom-4 right-4 h-8 w-8 border border-neutral-200 rounded-full backdrop-blur-sm flex items-center justify-center z-50"
-        onClick={() => setOpen(!open)}
+        className="fixed lg:hidden bottom-4 right-4 h-10 w-10 border border-neutral-200 rounded-full backdrop-blur-sm flex items-center justify-center z-50"
+        onClick={() => setOpen((prev) => !prev)}
+        aria-label="Toggle Sidebar"
       >
-        <IconLayoutSidebarRightCollapse className="h-4 w-4 text-secondary" />
+        <IconLayoutSidebarRightCollapse className="h-6 w-6 text-secondary" />
       </button>
     </>
   );
@@ -54,7 +57,7 @@ export const Navigation = ({
 }) => {
   const pathname = usePathname();
 
-  const isActive = (href: string) => pathname === href;
+  const isActive = (href: string) => pathname === href; // Exact match logic
 
   return (
     <div className="flex flex-col space-y-1 my-10 relative z-[100]">
@@ -64,8 +67,10 @@ export const Navigation = ({
           href={link.href}
           onClick={() => isMobile() && setOpen(false)}
           className={twMerge(
-            "text-secondary hover:text-primary transition duration-200 flex items-center space-x-2 py-2 px-2 rounded-md text-sm",
-            isActive(link.href) && "bg-white shadow-lg text-primary"
+            "flex items-center space-x-2 py-2 px-2 text-sm rounded-md transition duration-200",
+            isActive(link.href)
+              ? "bg-white shadow-lg text-primary"
+              : "text-secondary hover:text-primary"
           )}
         >
           <link.icon
@@ -78,23 +83,16 @@ export const Navigation = ({
         </Link>
       ))}
 
-      <Heading as="p" className="text-sm md:text-sm lg:text-sm pt-10 px-2">
+      <Heading as="p" className="text-sm pt-10 px-2">
         Socials
       </Heading>
       {socials.map((link: Navlink) => (
         <Link
           key={link.href}
           href={link.href}
-          className={twMerge(
-            "text-secondary hover:text-primary transition duration-200 flex items-center space-x-2 py-2 px-2 rounded-md text-sm"
-          )}
+          className="flex items-center space-x-2 py-2 px-2 text-sm rounded-md text-secondary hover:text-primary transition duration-200"
         >
-          <link.icon
-            className={twMerge(
-              "h-4 w-4 flex-shrink-0",
-              isActive(link.href) && "text-sky-500"
-            )}
-          />
+          <link.icon className="h-4 w-4 flex-shrink-0" />
           <span>{link.label}</span>
         </Link>
       ))}
@@ -104,15 +102,15 @@ export const Navigation = ({
 
 const SidebarHeader = () => {
   return (
-    <div className="flex space-x-2">
+    <div className="flex items-center space-x-2">
       <Image
         src="/avatar.jpg"
-        alt="Avatar"
-        height="50"
-        width="50"
-        className="object-cover object-top rounded-full flex-shrink-0"
+        alt="Prem Patel's Avatar"
+        height={50}
+        width={50}
+        className="rounded-full object-cover"
       />
-      <div className="flex text-sm flex-col">
+      <div className="flex flex-col text-sm">
         <p className="font-bold text-primary">Prem Patel</p>
         <p className="font-light text-secondary">Developer</p>
       </div>
