@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import { navlinks } from "@/constants/navlinks";
@@ -15,18 +15,31 @@ import { Heading } from "./Heading";
 import { Badge } from "./Badge";
 
 export const Sidebar = () => {
-  const [open, setOpen] = useState(!isMobile());
+  // Initialize state with null to handle hydration
+  const [open, setOpen] = useState<boolean>(false);
+  const [mounted, setMounted] = useState(false);
+
+  // Handle initial state after hydration
+  useEffect(() => {
+    setMounted(true);
+    setOpen(!isMobile());
+  }, []);
+
+  // Don't render anything until after hydration
+  if (!mounted) return null;
 
   return (
     <>
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {open && (
           <motion.div
-            initial={{ x: -200 }}
-            animate={{ x: 0 }}
-            exit={{ x: -200 }}
+            initial={{ x: -200, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: -200, opacity: 0 }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
             className="fixed lg:relative z-[100] left-0 top-0 h-screen bg-neutral-100 px-6 py-10 max-w-[14rem] lg:w-fit flex flex-col justify-between"
+            // Add layout prop to handle layout changes smoothly
+            layout
           >
             <div className="flex-1 overflow-auto">
               <SidebarHeader />
@@ -49,7 +62,6 @@ export const Sidebar = () => {
     </>
   );
 };
-
 export const Navigation = ({
   setOpen,
 }: {
