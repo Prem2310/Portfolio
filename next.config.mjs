@@ -7,6 +7,7 @@ const nextConfig = {
   images: {
     loader: "default",
     domains: ["prempatel.netlify.app"],
+    unoptimized: true,
   },
   experimental: {
     mdxRs: true,
