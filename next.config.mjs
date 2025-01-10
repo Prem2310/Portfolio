@@ -6,17 +6,11 @@ import rehypePrism from "@mapbox/rehype-prism";
 const nextConfig = {
   images: {
     loader: "default",
-    domains: [
-      "images.unsplash.com",
-      "res.cloudinary.com",
-      "prempatel.netlify.app",
-    ],
+    domains: ["prempatel.netlify.app"],
   },
   experimental: {
     mdxRs: true,
   },
-  basePath: "/",
-  assetPrefix: "/",
 };
 
 const withMDX = nextMDX({
