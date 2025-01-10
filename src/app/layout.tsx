@@ -29,17 +29,12 @@ export default function RootLayout({
           "flex antialiased h-screen overflow-hidden bg-gray-100"
         )}
       >
-        {/* Sidebar is persistent and doesn't re-render */}
         <Sidebar />
-        <div className="lg:pl-2 lg:pt-2 p-4 bg-gray-100 flex-1 overflow-hidden">
-          {/* Only this section changes across navigation */}
-          <main
-            id="main-content"
-            className="flex-1 bg-white min-h-screen lg:rounded-tl-xl border border-transparent lg:border-neutral-200 overflow-y-auto"
-          >
+        <div className="lg:pl-2 lg:pt-2 bg-gray-100 flex-1 overflow-y-auto">
+          <div className="flex-1 bg-white min-h-screen lg:rounded-tl-xl border border-transparent lg:border-neutral-200 overflow-y-auto">
             {children}
-          </main>
-          <Footer />
+            <Footer />
+          </div>
         </div>
       </body>
     </html>
