@@ -15,6 +15,8 @@ const nextConfig = {
   experimental: {
     mdxRs: true,
   },
+  basePath: "/",
+  assetPrefix: "/",
 };
 
 const withMDX = nextMDX({
