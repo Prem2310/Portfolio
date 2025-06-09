@@ -7,7 +7,6 @@ import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import { visit } from "unist-util-visit";
 
-import { ComponentPreview } from "@/components/component-preview";
 import { ComponentSource } from "@/components/component-source";
 import {
   Table,
