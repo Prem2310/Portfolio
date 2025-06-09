@@ -28,7 +28,7 @@ export const USER = {
   about: `
 Hello, World! I am Prem Patel — a Software Developer passionate about creating high-performance, user-centric software solutions with intuitive and engaging designs.\n
 With 1+ years of experience, I specialize in building high-quality web applications using Next.js, React, TypeScript, and Node js. Beyond work, I love exploring new technologies and turning ideas into reality through personal projects.\n
-One of my key projects, [Finovera](https://zadark.com), an AI-powered investment platform with real-time financial API integration for live stock data and market
+One of my key projects, [Finovera](https://github.com/Prem2310/finovera-frontend), an AI-powered investment platform with real-time financial API integration for live stock data and market
 news.\n
 Let's connect and collaborate!
   `,
