@@ -19,6 +19,10 @@ export const MAIN_NAV: NavItem[] = [
     title: "Devfolio",
     href: "/",
   },
+  {
+    title: "Resume",
+    href: "https://drive.google.com/file/d/1ku_MjrwfbUn0gOzxblZ3Zs7WpQqgl1gy/view?usp=sharing"
+  },
 ];
 
 export const SOURCE_CODE_GITHUB_URL = "https://github.com/prem2310";
