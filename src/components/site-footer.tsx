@@ -1,4 +1,3 @@
-import { SOURCE_CODE_GITHUB_URL } from "@/config/site";
 
 export function SiteFooter() {
   return (

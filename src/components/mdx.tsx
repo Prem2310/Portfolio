@@ -110,7 +110,6 @@ const components: MDXRemoteProps["components"] = {
     );
   },
   code: Code,
-  ComponentPreview,
   ComponentSource,
   CodeTabs,
   Steps: (props) => (

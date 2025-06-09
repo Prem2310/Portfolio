@@ -2,25 +2,18 @@
 
 import {
   BriefcaseBusinessIcon,
-  ComponentIcon,
-  FileBadgeIcon,
-  FilesIcon,
   FileTextIcon,
-  FileUserIcon,
   FolderCodeIcon,
   LetterTextIcon,
   MedalIcon,
   MonitorIcon,
   MoonStarIcon,
   SunIcon,
-  TriangleDashedIcon,
-  TypeIcon,
 } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 import { useCallback, useEffect, useState } from "react";
-import { toast } from "sonner";
 
 import {
   CommandDialog,
@@ -32,10 +25,8 @@ import {
   CommandSeparator,
 } from "@/components/ui/command";
 import { SOCIAL_LINKS } from "@/features/profile/data/social-links";
-import { copyText } from "@/utils/copy";
 
-import { ChanhDaiMark, getMarkSVG } from "./chanhdai-mark";
-import { getWordmarkSVG } from "./chanhdai-wordmark";
+import { ChanhDaiMark } from "./chanhdai-mark";
 import { Button } from "./ui/button";
 
 type CommandItemType = {
@@ -86,7 +77,7 @@ const LINKS: CommandItemType[] = SOCIAL_LINKS.map((item) => ({
 
 export function CommandMenu() {
   const router = useRouter();
-  const { setTheme, resolvedTheme } = useTheme();
+  const { setTheme } = useTheme();
 
   const [open, setOpen] = useState(false);
 
@@ -138,11 +129,6 @@ export function CommandMenu() {
     [setTheme]
   );
 
-  const handleCopyText = useCallback((text: string, msg: string) => {
-    setOpen(false);
-    copyText(text);
-    toast.success(msg);
-  }, []);
 
   return (
     <>

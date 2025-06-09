@@ -7,14 +7,14 @@ import { Markdown } from "@/components/markdown";
 import { Prose } from "@/components/ui/typography";
 import { cn } from "@/lib/cn";
 
-import type { Achivements } from "../../types/achivements";
+import type { Achivement } from "../../types/achivements";
 
 export function AwardItem({
   className,
   award,
 }: {
   className?: string;
-  award: Achivements;
+  award: Achivement;
 }) {
   const canExpand = Boolean(award?.description);
 
