@@ -13,7 +13,7 @@ export const USER = {
   address: "Ahmedabad, Gujarat, India",
   phoneNumber: "KzkxIDc5ODQyNjI0NjU=", // E.164 format, base64 encoded (https://t.io.vn/base64-string-converter)
   email: "cGF0ZWxwcmVtNzczNkBnbWFpbC5jb20=", // base64 encoded
-  website: "https://prem.dev", // base64 encoded
+  website: "https://prempatel.netlify.app", // base64 encoded
   otherWebsites: [
   ],
   dateOfBirth: "2003-10-23", // YYYY-MM-DD
