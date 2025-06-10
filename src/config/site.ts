@@ -21,7 +21,7 @@ export const MAIN_NAV: NavItem[] = [
   },
   {
     title: "Resume",
-    href: "https://drive.google.com/file/d/1ku_MjrwfbUn0gOzxblZ3Zs7WpQqgl1gy/view?usp=sharing"
+    href: "/Prem_Patel_Resume.pdf"
   },
 ];
 
