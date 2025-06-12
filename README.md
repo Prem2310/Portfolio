@@ -1,1 +1,1 @@
-## [Portfolio](https://prempatel.netlify.app/)
+## [Portfolio](https://prempatel.tech/)
