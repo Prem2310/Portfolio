@@ -23,7 +23,7 @@ export const Achivements: Achivement[] = [
     title: "AU-IQM Hackathon 2022",
     date: "2022-11-13",
     grade: "Adani University",
-    description: "- Hackathon hosted by Adani University\n- Developed innovative solution in agriculture domain",
+    description: "- Hackathon hosted by Adani University\n- Developed an innovative job portal solution to connect job seekers and employers across India.",
   },
   {
     id: "4",
