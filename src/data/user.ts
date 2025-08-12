@@ -33,7 +33,7 @@ news.\n
 Let's connect and collaborate!
   `,
   avatar: "https://res.cloudinary.com/dkvsiuokl/image/upload/v1749237116/profile_b716fj.jpg",
-  ogImage: "",
+  ogImage: "https://res.cloudinary.com/dkvsiuokl/image/upload/v1749237116/profile_b716fj.jpg",
   keywords:
     "software developer, web developer, full stack developer, frontend developer, backend developer, ai, machine learning, deep learning, data science, data analysis, data visualization, programming, coding, javascript, typescript, python, reactjs, nextjs, nodejs",
   dateCreated: "2023-10-20", // YYYY-MM-DD

@@ -66,7 +66,7 @@ export const metadata: Metadata = {
       },
     ],
     apple: {
-      url: "https://res.cloudinary.com/dkvsiuokl/image/upload/v1749241984/P_1_duslyn.png",
+      url: "https://res.cloudinary.com/dkvsiuokl/image/upload/v1749452496/code-square-svgrepo-com_tsw3b9.svg",
       type: "image/png",
       sizes: "180x180",
     },
