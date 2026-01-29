@@ -7,8 +7,8 @@ export const EXPERIENCES: Experience[] = [
     positions: [
       {
         id: "20f8bfe5-b6a3-4b0d-ac2f-6fccd50d417e",
-        title: "Software Developer Intern",
-        year: "01.2025 — present",
+        title: "Software Developer",
+        year: "07.2025 — present",
         employmentType: "Full-time",
         icon: "code",
         description:
@@ -27,8 +27,20 @@ export const EXPERIENCES: Experience[] = [
         ],
         expanded: true,
       },
+       {
+        id: "20f8bfe5-b6a3-4b0d-ac2f-6fccd50d417e",
+        title: "Software Developer Intern",
+        year: "01.2025 — 07.2025",
+        employmentType: "Internship",
+        icon: "code",
+        description:
+          "Learned end-to-end ERP workflows and contributed to feature development and improvements.",
+        skills: [
+        ],
+        expanded: false,
+      },
     ],
-    current: true,
+    current: false,
   },
   {
     company: "VMUKTI",
