@@ -20,7 +20,7 @@ export const USER = {
   jobTitle: "Software Developer",
   jobs: [
     {
-      title: "Software Developer Intern",
+      title: "Software Developer",
       company: "ODOO",
       website: "https://www.odoo.com/",
     },
